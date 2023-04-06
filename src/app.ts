@@ -1,7 +1,6 @@
 // Typescript Tasks
 
 
-
 // 1. Write a JavaScript program that accepts two numbers in two prompts and
 // displays the larger one in the console.
 
