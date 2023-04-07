@@ -41,11 +41,11 @@ else {
 function checkSign(num) {
     if (num < 0) {
         // console.log("The sign is -")
-        return `${num} is negative`;
+        return alert(`${num} is negative`);
     }
     else {
         // console.log("The sign is +")
-        return `${num} is posive`;
+        return alert(`${num} is positive`);
     }
 }
 console.log(checkSign(5));
@@ -56,15 +56,14 @@ console.log(checkSign(-3));
 // 3. Write a JavaScript program that accepts five numbers in five prompts and
 // displays the larger one in the console
 function checkLargeNum() {
-    var _a, _b, _c, _d, _e;
-    const numb1 = parseInt(((_a = prompt("Enter number 1")) === null || _a === void 0 ? void 0 : _a.trim()) || '');
-    const numb2 = parseInt(((_b = prompt("Enter Number 2")) === null || _b === void 0 ? void 0 : _b.trim()) || '');
-    const numb3 = parseInt(((_c = prompt("Enter number 3")) === null || _c === void 0 ? void 0 : _c.trim()) || '');
-    const numb4 = parseInt(((_d = prompt("Enter Number 4")) === null || _d === void 0 ? void 0 : _d.trim()) || '');
-    const numb5 = parseInt(((_e = prompt("Enter number 5")) === null || _e === void 0 ? void 0 : _e.trim()) || '');
-    const max = Math.max(numb1, numb2, numb3, numb4, numb5);
+    var _a;
+    const nums = [];
+    for (let i = 1; i <= 5; i++) {
+        const num = parseInt(((_a = prompt(`Enter number ${i}`)) === null || _a === void 0 ? void 0 : _a.trim()) || '');
+        nums.push(num);
+    }
+    const max = Math.max(...nums);
     return `The larger number is ${max}`;
-    // console.log(`The larger number is ${max}`)
 }
 const x = checkLargeNum();
 console.log(x);
