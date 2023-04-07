@@ -1,6 +1,7 @@
 // Typescript Tasks
 
 
+
 // 1. Write a JavaScript program that accepts two numbers in two prompts and
 // displays the larger one in the console.
 
@@ -45,14 +46,14 @@ if (num < 0) {
 
 // Making Function for above
 
-function checkSign(num:number):string{
+function checkSign(num:number):void{
     if(num < 0 ){
         // console.log("The sign is -")
-        return `${num} is negative`
+        return alert(`${num} is negative`)
 
     }else{
         // console.log("The sign is +")
-        return `${num} is posive`
+        return alert(`${num} is positive`)
 
     }
 }
@@ -67,17 +68,17 @@ console.log(checkSign(-3))
 // 3. Write a JavaScript program that accepts five numbers in five prompts and
 // displays the larger one in the console
 
-function checkLargeNum():string{
-    const numb1=parseInt(prompt("Enter number 1")?.trim() || '')
-    const numb2=parseInt(prompt("Enter Number 2")?.trim() || '')
-    const numb3=parseInt(prompt("Enter number 3")?.trim() || '')
-    const numb4=parseInt(prompt("Enter Number 4")?.trim() || '')
-    const numb5=parseInt(prompt("Enter number 5")?.trim() || '')
 
-    const max:number= Math.max(numb1,numb2,numb3,numb4,numb5)
-    return `The larger number is ${max}`
-    // console.log(`The larger number is ${max}`)
+function checkLargeNum(): string {
+  const nums: number[] = [];
+  for(let i = 1; i <= 5; i++){
+    const num = parseInt(prompt(`Enter number ${i}`)?.trim() || '');
+    nums.push(num);
+  }
+  const max: number = Math.max(...nums);
+  return `The larger number is ${max}`;
 }
+
 
 const x:string=checkLargeNum()
 console.log(x)
